@@ -30,6 +30,54 @@ class Shape(ABC):
         return str(self)
 
 
+class Triangle(Shape):
+    """A class representing a triangle with three sides."""
+    
+    def __init__(self, a: float, b: float, c: float) -> None:
+        """
+        Initialize a triangle with three sides.
+        
+        Args:
+            a: Length of the first side.
+            b: Length of the second side.
+            c: Length of the third side.
+            
+        Raises:
+            ValueError: If the sides do not form a valid triangle.
+        """
+        sides = sorted([a, b, c])
+        if sides[0] <= 0 or sides[0] + sides[1] <= sides[2]:
+            raise ValueError("Invalid triangle sides")
+        self.a, self.b, self.c = sides
+    
+    def area(self) -> float:
+        """
+        Calculate the area of the triangle using Heron's formula.
+        
+        Returns:
+            The area of the triangle.
+        """
+        s = (self.a + self.b + self.c) / 2
+        return (s * (s - self.a) * (s - self.b) * (s - self.c)) ** 0.5
+    
+    def is_right_angle(self) -> bool:
+        """
+        Check if the triangle is right-angled.
+        
+        Returns:
+            True if the triangle is right-angled, False otherwise.
+        """
+        return abs(self.a**2 + self.b**2 - self.c**2) < 1e-9
+    
+    def __str__(self) -> str:
+        """Return string representation of the triangle."""
+        return f"{self.__class__.__name__}(a={self.a}, b={self.b}, c={self.c})"
+    
+    def __repr__(self) -> str:
+        """Return official string representation of the triangle."""
+        return str(self)
+
+
 class Circle(Shape):
     """A class representing a circle with a given radius."""
     
