@@ -2,4 +2,6 @@
 Geometry module for geometric calculations.
 """
 
-__all__ = []  # Will be populated with shape classes
+from .shapes import Shape
+
+__all__ = ['Shape']  # Expose Shape class at package level
