@@ -28,3 +28,31 @@ class Shape(ABC):
     def __repr__(self) -> str:
         """Return official string representation of the shape."""
         return str(self)
+
+
+class Circle(Shape):
+    """A class representing a circle with a given radius."""
+    
+    def __init__(self, radius: float):
+        """
+        Initialize a circle with the given radius.
+        
+        Args:
+            radius: The radius of the circle. Must be positive.
+            
+        Raises:
+            ValueError: If radius is not positive.
+        """
+        if radius <= 0:
+            raise ValueError("Radius must be positive")
+        self.radius = radius
+    
+    def area(self) -> float:
+        """
+        Calculate the area of the circle.
+        
+        Returns:
+            The area of the circle (π * radius²).
+        """
+        from math import pi
+        return pi * self.radius ** 2
