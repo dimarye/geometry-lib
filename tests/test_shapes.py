@@ -1,6 +1,6 @@
 import math
 import pytest
-from geometry_lib.geometry.shapes import Circle, Shape
+from geometry_lib.geometry.shapes import Circle, Shape, Triangle
 
 
 def test_circle_inherits_from_shape():
@@ -37,7 +37,6 @@ def test_circle_str_representation():
 
 def test_triangle_inherits_from_shape():
     """Test that Triangle is a subclass of Shape."""
-    from geometry_lib.geometry.shapes import Triangle
     assert issubclass(Triangle, Shape)
 
 
