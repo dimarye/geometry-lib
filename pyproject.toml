@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geometry-lib"
+version = "1.0.0"
+description = "A Python library for geometric calculations"
+readme = "README.md"
+authors = [
+    {name = "Dmitry Rzhanykh", email = "ryedmitr@gmail.com"},
+]
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/dimarye/geometry-lib"
+"Bug Tracker" = "https://github.com/dimarye/geometry-lib/issues"
+"Source" = "https://github.com/dimarye/geometry-lib"
+"Changelog" = "https://github.com/dimarye/geometry-lib/releases"
